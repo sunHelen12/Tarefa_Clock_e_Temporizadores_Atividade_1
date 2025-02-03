@@ -41,6 +41,7 @@ int main(){
     gpio_init(LED_PIN_RED);
     gpio_init(LED_PIN_YELLOW);
     gpio_init(LED_PIN_GREEN);
+    //configura como saída
     gpio_set_dir(LED_PIN_RED, GPIO_OUT);
     gpio_set_dir(LED_PIN_YELLOW, GPIO_OUT);
     gpio_set_dir(LED_PIN_GREEN, GPIO_OUT);
