@@ -3,9 +3,9 @@
 #include "hardware/timer.h" //biblioteca da Raspberry Pi Pico para funções básicas (GPIO, UART, delays, etc.)
 
 //definindo os GPIOs para os LEDs
-#define LED_PIN_RED 11
+#define LED_PIN_RED 13
 #define LED_PIN_YELLOW 12
-#define LED_PIN_GREEN 13
+#define LED_PIN_GREEN 11
 
 // rotina callback do temporizador periódico
 bool repeating_timer_callback(struct repeating_timer *t) {
