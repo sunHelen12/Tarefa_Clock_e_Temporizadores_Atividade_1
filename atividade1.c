@@ -7,7 +7,7 @@
 #define LED_PIN_YELLOW 12
 #define LED_PIN_GREEN 13
 
-//callback do temporizador periódico
+// rotina callback do temporizador periódico
 bool repeating_timer_callback(struct repeating_timer *t) {
     static uint estado = 0;
 
@@ -32,8 +32,29 @@ bool repeating_timer_callback(struct repeating_timer *t) {
     return true;
 }
 
-
+//rotina principal
 int main(){
-   //incializando LEDs
+   //incializa comunicação serial
     stdio_init_all(); 
+
+    //inicializar os pinos GPIO
+    gpio_init(LED_PIN_RED);
+    gpio_init(LED_PIN_YELLOW);
+    gpio_init(LED_PIN_GREEN);
+    gpio_set_dir(LED_PIN_RED, GPIO_OUT);
+    gpio_set_dir(LED_PIN_YELLOW, GPIO_OUT);
+    gpio_set_dir(LED_PIN_GREEN, GPIO_OUT);
+
+    //cria  e inicializa o temporizador com 3000ms = 3 segundos
+    struct repeating_timer timer;
+    //implementação da função 
+    add_repeating_timer_ms(3000, repeating_timer_callback, NULL, &timer);
+
+    //loop principal
+    while(true){
+        sleep_ms(1000); //mensagem a cada 1 segundo
+        printf("Se passou 1 Segundo...\n");
+    }
+
+    return 0;
 }
