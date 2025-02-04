@@ -73,7 +73,7 @@ int main(){
     struct repeating_timer timer;
     
     //essa condicional serve como teste, caso a inicialização do temporizador apresente erro
-    //imprimir uma mensagem de erro e encerrará o programa
+    //ela irá imprimir uma mensagem de erro e encerrará o programa
     if (!add_repeating_timer_ms(3000, repeating_timer_callback, NULL, &timer)) {
         printf("Erro ao iniciar o temporizador!\n");
         return 1;
