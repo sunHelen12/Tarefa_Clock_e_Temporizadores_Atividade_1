@@ -68,7 +68,7 @@ int main(){
 
     //chamando rotinas de teste
     test_gpio_setup();
-    sleep_ms(100);
+    sleep_ms(50);
             
     //cria  e inicializa o temporizador com 3000ms = 3 segundos
     struct repeating_timer timer;
