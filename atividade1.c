@@ -32,6 +32,25 @@ bool repeating_timer_callback(struct repeating_timer *t) {
     return true;
 }
 
+//rotina de teste para verificar se os pinos dos LEDs estão configurados corretamente
+void test_gpio_setup() {
+    printf("Testando configuração dos GPIOs...\n");
+
+    gpio_put(LED_PIN_RED, 1);
+    sleep_ms(500);
+    gpio_put(LED_PIN_RED, 0);
+
+    gpio_put(LED_PIN_YELLOW, 1);
+    sleep_ms(500);
+    gpio_put(LED_PIN_YELLOW, 0);
+
+    gpio_put(LED_PIN_GREEN, 1);
+    sleep_ms(500);
+    gpio_put(LED_PIN_GREEN, 0);
+
+    printf("Teste dos GPIOs concluído.\n");
+}
+
 //rotina principal
 int main(){
    //incializa comunicação serial
@@ -46,11 +65,19 @@ int main(){
     gpio_set_dir(LED_PIN_RED, GPIO_OUT);
     gpio_set_dir(LED_PIN_YELLOW, GPIO_OUT);
     gpio_set_dir(LED_PIN_GREEN, GPIO_OUT);
-        
+
+    //chamando rotinas de teste
+    test_gpio_setup();
+            
     //cria  e inicializa o temporizador com 3000ms = 3 segundos
     struct repeating_timer timer;
-    //implementação da função 
-    add_repeating_timer_ms(3000, repeating_timer_callback, NULL, &timer);
+    
+    //essa condicional serve como teste, caso a inicialização do temporizador apresente erro
+    //imprimir uma mensagem de erro e encerrará o programa
+    if (!add_repeating_timer_ms(3000, repeating_timer_callback, NULL, &timer)) {
+        printf("Erro ao iniciar o temporizador!\n");
+        return 1;
+    }
 
     //loop principal
     while(true){
