@@ -9,7 +9,7 @@
         <li>Amarelo</li>
         <li>Verde</li>
     </ul>
-        <p>O tempo de cada estado é de 3 segundos, com emprego da função <code>add_repeating_timer_ms()</code> e a função de call-back do temporizador <code>repeating_timer_callback()</code> . Além disso, há uma função de teste que valida o funcionamento do semáforo.</p>
+        <p>O tempo de cada estado é de 3 segundos, com emprego da função <code>add_repeating_timer_ms()</code> e a função de call-back do temporizador <code>repeating_timer_callback()</code> . Além disso, há uma funções de teste que validam o funcionamento do semáforo.</p>
 
 <h2>Importante⚠️</h2>
 <p>Esse código foi produzido em um Sistema Operacional Linux. Certifique-se de importar o projeto adequadamente e verificar as configurações do <code>c_cpp_properties.json</code>.</p>
@@ -30,7 +30,7 @@
         <li><strong>LED Amarelo</strong>: GPIO 12</li>
         <li><strong>LED Verde</strong>: GPIO 11</li>
     </ul>
-    <p>Os LEDs acendem e apagam conforme o estado do semáforo. Além disso, mensagens de depuração são exibidas via <code>printf</code>.</p>
+    <p>Primeiro será feito o teste dos LEDs, após isso os LEDs acendem e apagam conforme o estado do semáforo. Além disso, mensagens de depuração são exibidas via <code>printf</code>.</p>
     
 <h2>Tecnologias Utilizadas</h2>
   <ul>
