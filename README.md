@@ -42,6 +42,9 @@
     <li>Placa BitDogLab.</li>  
   </ul>
 
+<h2>Demonstração</h2>
+    <img src="assets/semaforo.gif" width="500" height="300">
+
 <h2>Clone o Repositório</h2>
   <ol>
      <li>Abra o <strong>Prompt de Comando</strong> ou o terminal de sua preferência.</li>
