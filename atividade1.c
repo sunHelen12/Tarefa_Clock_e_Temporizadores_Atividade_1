@@ -32,20 +32,6 @@ bool repeating_timer_callback(struct repeating_timer *t) {
     return true;
 }
 
-//rotina de teste para verificar o funcionamento do semáforo
-void test_semaforo() {
-    printf("Iniciando testes...\n");
-    
-    for (int i = 0; i < 3; i++) {
-        repeating_timer_callback(NULL);
-        sleep_ms(100); 
-        printf("Teste %d - LED Vermelho: %d, Amarelo: %d, Verde: %d\n", 
-               i, gpio_get(LED_PIN_RED), gpio_get(LED_PIN_YELLOW), gpio_get(LED_PIN_GREEN));
-    }
-    
-    printf("Testes finalizados.\n");
-}
-
 //rotina principal
 int main(){
    //incializa comunicação serial
@@ -55,14 +41,12 @@ int main(){
     gpio_init(LED_PIN_RED);
     gpio_init(LED_PIN_YELLOW);
     gpio_init(LED_PIN_GREEN);
+
     //configura como saída
     gpio_set_dir(LED_PIN_RED, GPIO_OUT);
     gpio_set_dir(LED_PIN_YELLOW, GPIO_OUT);
     gpio_set_dir(LED_PIN_GREEN, GPIO_OUT);
-
-    //executa testes básicos iniciais do semáforo
-    test_semaforo();    
-
+        
     //cria  e inicializa o temporizador com 3000ms = 3 segundos
     struct repeating_timer timer;
     //implementação da função 
@@ -70,8 +54,9 @@ int main(){
 
     //loop principal
     while(true){
-        sleep_ms(1000); //mensagem a cada 1 segundo
         printf("Se passou 1 Segundo...\n");
+        sleep_ms(1000); //mensagem a cada 1 segundo
+       
     }
 
     return 0;
