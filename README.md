@@ -30,7 +30,7 @@
         <li><strong>LED Amarelo</strong>: GPIO 12</li>
         <li><strong>LED Verde</strong>: GPIO 11</li>
     </ul>
-    <p>Primeiro será feito o teste dos LEDs, após isso os LEDs acendem e apagam conforme o estado do semáforo. Além disso, mensagens de depuração são exibidas via <code>printf</code>.</p>
+    <p>Primeiro será feito o teste dos LEDs, após isso os LEDs acendem e apagam conforme o estado do semáforo em um intervalo de 3 segundos. Além disso, mensagens de depuração são exibidas via <code>printf</code>.</p>
     
 <h2>Tecnologias Utilizadas</h2>
   <ul>
