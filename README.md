@@ -14,13 +14,13 @@
 <h2>Importante⚠️</h2>
 <p>Esse código foi produzido em um Sistema Operacional Linux. Certifique-se de importar o projeto adequadamente e verificar as configurações do <code>c_cpp_properties.json</code>.</p>
 
-<h2>Hardware Necessário</h2>
+<h2>Componentes Necessários</h2>
     <ul>
         <li>1 x Raspberry Pi Pico W</li>
         <li>1 x LED Vermelho</li>
         <li>1 x LED Amarelo</li>
         <li>1 x LED Verde</li>
-        <li>3 x Resistores (330Ω)</li>
+        <li>3 x Resistores (330Ω): para limitar as correntes nos LEDs</li>
     </ul>
     
 <h2>Funcionamento</h2>
@@ -63,7 +63,7 @@
     cmake ..
     make
     </pre>
-    <p>Depois, utilize o Wokwi Simulator para executar o projeto no Visual Studio Code!</p>
+    <p>Depois, utilize o Wokwi Simulator para executar o projeto no Visual Studio Code ou a placa BitDogLab!</p>
     
 <h2>Simulando o projeto no Wokwi Web</h2>
   <p>Para simular o projeto no Wokwi Web acesse: <a href="https://wokwi.com/projects/421832605027133441" target="_blank">Tarefa Semáforo com Temporizador Periódico</a>.</p>
